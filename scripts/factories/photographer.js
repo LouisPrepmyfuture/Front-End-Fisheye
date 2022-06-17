@@ -1,4 +1,5 @@
 function photographerFactory(data) {
+   
     const { name, portrait, country, city, tagline, price, id } = data;
     const picture = `assets/photographers/${portrait}`;
     const link = `photographer.html?id=${id}`;
@@ -29,5 +30,41 @@ function photographerFactory(data) {
         article.appendChild(p2);
         return (article);
     }
-    return { name, picture, getUserCardDOM }
+
+    function getUseDOM() {
+        const content = document.createElement( 'div' );
+        const div = document.createElement( 'div' );
+        const h1 = document.createElement( 'h1' );
+        const span =  document.createElement( 'span' );
+        const p =  document.createElement( 'p' );
+        const button =  document.createElement( 'button' );
+        const img = document.createElement( 'img' );
+
+        h1.textContent = name;
+        span.textContent =country +", "+ city;
+        p.textContent = tagline;
+        button.textContent = "Contactez-moi";
+
+        
+        content.setAttribute("class", "content-photographer");
+        button.setAttribute("class", "contact_button");
+        button.setAttribute("onclick", "displayModal()");
+        img.setAttribute("src", picture);
+        img.setAttribute("all", "Photo de du photographe");
+
+        content.appendChild(div)
+        div.appendChild(h1);
+        div.appendChild(span);
+        div.appendChild(p);
+
+        content.appendChild(button);
+        content.appendChild(img);
+
+        
+    
+        return content
+    }
+        
+
+    return { name, picture, getUserCardDOM , getUseDOM}
 }
