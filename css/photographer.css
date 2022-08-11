@@ -47,15 +47,16 @@
     margin: 100px auto;
 }
  .card{
-     width: 350px;
-     height: 351px;
+    width: 350px;
+    height: 351px;
     margin: 0 25px 20px;
  }
 
- .card img{
+ .card img , .card video{
      width: 100%;
      object-fit: cover;
      height: 300px;
+     cursor: pointer;
   }
 .card-body{
     display: flex;
@@ -85,23 +86,117 @@
     cursor: pointer;
 }
 
+.fixed-contenty{
+    position: fixed;
+    bottom: 0;
+    right: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    background-color: #DB8876;
+    padding: 19px;
+    font-size: 25px;
+    width: 350px;
+ }
+
+  .formData[data-error]::after {
+    content: attr(data-error);
+    color: #e54858;
+    margin-top: 7px;
+    margin-bottom: 7px;
+    font-size: 20px;
+    text-align: right;
+    line-height: 0.3;
+    opacity: 0;
+    transition: 0.3s;
+  }
+  .formData[data-error-visible="true"]::after {
+    opacity: 1;
+  }
+  .formData[data-error-visible="true"] .inputModal {
+    border: 5px solid #e54858;
+  }
+  
+  
+  
 .modal {
     border-radius: 5px;
     background-color: #DB8876;
     width: 50%;
+    overflow: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
     padding: 35px;
     margin: auto;
+    position: fixed;
+    height: 70%;
+    top: 1px;
+    left: 50%;
+    transform: translate(-50%,0);
+    margin-top: 50px;
+    margin-bottom: 50px;
 }
-
+.like:hover{
+    color: #DB8876;
+}
 .modal header {
     justify-content: space-between;
     width: 100%;
 }
 
+ #lightbox_modal{
+     left: 50%;
+     transform: translate(-50%,0);
+     width: 90%;
+     background-color: #f0f0f0;
+     position: fixed;
+     height: 90%;
+     display: flex;
+     top: 5%;
+     bottom: 5%;
+     position: fixed;
+     justify-content: center;
+ }
+ #lightbox_modal .content_left,
+ #lightbox_modal .content_right {
+    width: 5%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    font-size: 60px;
+    color: #901C1C;
+ }
+ #lightbox_modal .content_right{
+     position: relative;
+ }
+ #lightbox_modal .content .media-lightbox{
+    border: 2px solid #901C1C;
+    width: 100%;
+    object-fit: cover;
+    height: 100%;
+    object-position: center;
+ }
+
+ #lightbox_modal .content{
+    object-fit: contain;
+    width: 90%;
+    object-position: center;
+    overflow: hidden;
+ }
+ #lightbox_modal .content_right .close{
+    position: absolute;
+    top:5px;
+    right: 5px;
+    font-size: 2rem;
+    color: #901C1C;
+ }
+#lightbox_modal .content{
+    width: 90%;
+}
 .modal header img {
     cursor: pointer;
 }

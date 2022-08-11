@@ -16,23 +16,47 @@
 
     </header>
     <main id="main">
-      <div class="photograph-header">
-        
-      </div>
-      <div class="media_section">
-        
-      </div>
+      <div class="photograph-header"></div>
+      <div id="tri"></div>
+      <div class="media_section"></div>
+      <div class="likes"></div>
     </main>
+    
+    <div id="lightbox_modal" style="display: none;">
+       
+          <div class="content_left">
+            <i onclick="preview_lightbox()" id="preview" class="fas fa-angle-left"></i>
+          </div>
+          <div id="content" class="content"></div>
+          <div class="content_right">
+            <i onclick="close_lightbox_modal()" class="close fas fa-times"></i>
+            <i onclick="next_lightbox()" class="fas fa-angle-right"></i>
+          </div>
+        
+    </div>
     <div id="contact_modal">
 			<div class="modal">
 				<header>
           <h2>Contactez-moi</h2>
           <img src="assets/icons/close.svg" onclick="closeModal()" />
         </header>
-				<form>
-					<div>
-						<label>Prénom</label>
-						<input />
+				<form action="photographer.html"  method="get" onsubmit="return submitModal(event)">
+					<div class="formData">
+						<label for="first-name">Prénom</label>
+						<input class="inputModal" id="first-name" type="text" name="first-name" />
+					</div>
+					<div class="formData">
+						<label for="last-name">Nom</label>
+						<input class="inputModal" id="last-name" type="text" name="last-name" />
+					</div>
+					<div class="formData">
+						<label for="mail">Email</label>
+						<input class="inputModal" id="email" type="email" name="email" />
+					</div>
+					<div class="formData">
+						<label for="message">Message</label>
+            <textarea class="inputModal" id="message" name="message">
+            </textarea>
 					</div>
           <button class="contact_button">Envoyer</button>
 				</form>
@@ -40,6 +64,7 @@
 		</div>
     <script src="scripts/data/data.js"></script>
     <script src="scripts/factories/Photographer.js"></script>
+    <script src="scripts/utils/lightbox.js"></script>
     <script src="scripts/factories/media.js"></script>
     <script src="scripts/pages/photographer.js"></script>
     <script src="/scripts/utils/contactForm.js"></script>

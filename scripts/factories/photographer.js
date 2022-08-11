@@ -48,7 +48,6 @@ function photographerFactory(data) {
         
         content.setAttribute("class", "content-photographer");
         button.setAttribute("class", "contact_button");
-        button.setAttribute("onclick", "displayModal()");
         img.setAttribute("src", picture);
         img.setAttribute("all", "Photo de du photographe");
 
@@ -59,8 +58,6 @@ function photographerFactory(data) {
 
         content.appendChild(button);
         content.appendChild(img);
-
-        
     
         return content
     }
