@@ -1,7 +1,11 @@
 #contact_modal {
     display: none;
 }
-
+main.no-sroll{
+    margin: 0;
+    height: 100%;
+    overflow: hidden;
+}
 .photograph-header {
     background-color: #FAFAFA;
     height: 300px;
@@ -17,7 +21,14 @@
     justify-content: space-between;
     width: 100%;
 }
-
+select {
+    height: 50px;
+    width: 150px;
+    background: #DB8876;
+    border: none;
+    font-size: 23px;
+    margin: 17px 100px;
+}
 .content-photographer h1{
     font-size: 64px;
     margin-bottom: 16px;
@@ -130,7 +141,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    padding: 35px;
+    padding: 0 35px;
     margin: auto;
     position: fixed;
     height: 70%;
@@ -139,6 +150,9 @@
     transform: translate(-50%,0);
     margin-top: 50px;
     margin-bottom: 50px;
+    max-width: 600px;
+    height: auto;
+    padding-bottom:15px;
 }
 .like:hover{
     color: #DB8876;
@@ -202,7 +216,7 @@
 }
 
 .modal header h2 {
-    font-size: 64px;
+    font-size: 40px;
     font-weight: normal;
     text-align: center;
 }
@@ -216,7 +230,7 @@ form {
 
 form label {
     color: #312E2E;
-    font-size: 36px;
+    font-size: 25px;
 }
 
 form div {
@@ -229,7 +243,13 @@ form div {
 
 form input {
     width: 100%;
-    height: 68px;
+    height: 41px;
     border: none;
     border-radius: 5px;
+    font-size: 20px;
+}
+form textarea{
+    height: 93px;
+    width: 100%;
+    font-size: 20px;
 }
