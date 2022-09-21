@@ -1,6 +1,13 @@
+let modal = document.getElementById('lightbox_modal')
 // Open the Modal
 function open_lightbox_modal() {
-	document.getElementById('lightbox_modal').style.display = 'flex'
+	const main = document.getElementById('main')
+	const preview = document.getElementById('preview')
+	preview.focus()
+	modal.style.display = 'flex'
+	modal.setAttribute('aria-hidden', 'false')
+	main.setAttribute('aria-hidden', 'true')
+	main.classList.add('no-sroll')
 }
 
 // Close the Modal
@@ -10,8 +17,31 @@ function close_lightbox_modal() {
 	document.getElementById('lightbox_modal').style.display = 'none'
 } 
 
+// Close modal when escape key is pressed
+document.addEventListener('keyup', (event) => {
+	if(modal.style.display != 'none'){
+		if (event.code === 'Space') {
+			close_lightbox_modal()
+		}
+		if (event.code === 'ArrowRight') {
+			preview_lightbox()
+		}
+		if (event.code === 'ArrowLeft') {
+			next_lightbox()
+		}
+	}
+}, false)
 
 
+// $(document).on('keydown', e => {
+// 	const keyCode = e.keyCode ? e.keyCode : e.which
+
+// 	if (document.getElementById('lightbox_modal').attr('aria-hidden') == 'false' && keyCode === 27) {
+// 		close_lightbox_modal()
+// 	}
+// })
+
+// media suivent 
 function next_lightbox() {
 	let total_media = document.querySelectorAll('.card').length - 1
 	let index_modal = parseInt(document.querySelector('.media-lightbox').id.split('-')[1])
@@ -24,8 +54,8 @@ function next_lightbox() {
 		showLightbox(next_index)
 	}
 }
-
-
+			
+//  media précedant
 function preview_lightbox() {
 	let total_media = document.querySelectorAll('.card').length - 1
 	let index_modal = parseInt(document.querySelector('.media-lightbox').id.split('-')[1])
@@ -48,6 +78,7 @@ function showLightbox(n) {
 		open_lightbox_modal()
 	}
 	let cloneHtmlMedia = htmlMedia.cloneNode(false)
+
 	cloneHtmlMedia.setAttribute('class','media-lightbox')
 	content.appendChild(cloneHtmlMedia)
 }

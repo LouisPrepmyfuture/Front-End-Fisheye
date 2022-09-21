@@ -84,7 +84,6 @@ function ModalValidater(){
 		nbError++
 	}
 
-
 	if(nbError > 0){
 		return false
 	}else{

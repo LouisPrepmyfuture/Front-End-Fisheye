@@ -5,7 +5,7 @@ function mediaFactory(data, pathImg) {
 	let media, mediaBlock
 	const link = `photographer.html?id=${id}`
 
- 
+  //crée une carde
 	function getUserCardMediaDOM(){
 		const card = document.createElement( 'div' )
 		const body = document.createElement( 'div' )
@@ -43,7 +43,7 @@ function mediaFactory(data, pathImg) {
 		like.appendChild(i)
 			
 			
-			
+		// Ajoute un like 
 		like.addEventListener('click', function clickLike(e) {
 			e.stopImmediatePropagation()
 			likes += 1
@@ -56,6 +56,7 @@ function mediaFactory(data, pathImg) {
 		return card
 	}
 
+	//adissionne tout les like  
 	function getSumLikes(i) {
 		const likesDomList = document.querySelectorAll('.btn-like')
 		let sum = 0

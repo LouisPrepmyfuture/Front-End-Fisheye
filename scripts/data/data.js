@@ -14,7 +14,7 @@ async function getData() {
 } 
 
 // return id url
-getUrlId = function(){
+let getUrlId = function(){
 	let baseUrl = (window.location).href
 	let id = baseUrl.substring(baseUrl.lastIndexOf('=') + 1)
 

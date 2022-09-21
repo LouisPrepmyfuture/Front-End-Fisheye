@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
   <head>
     <link href="css/style.css" rel="stylesheet" type="text/css" />
     <meta charset="utf-8">
@@ -17,7 +17,7 @@
     </header>
     <main aria-hidden="false" id="main">
       <div class="photograph-header"></div>
-      <div id="tri"></div>
+      <div id="trie"></div>
       <div class="media_section"></div>
       <div class="likes"></div>
     </main>
@@ -25,12 +25,12 @@
     <div aria-hidden="true"  role="lightbox" id="lightbox_modal" style="display: none;">
        
       <div class="content_left">
-        <i onclick="preview_lightbox()" id="preview" class="fas fa-angle-left"></i>
+        <strong onclick="preview_lightbox()" id="preview" class="fas fa-angle-left"></strong>
       </div>
       <div id="content" class="content"></div>
       <div class="content_right">
-        <i onclick="close_lightbox_modal()" class="close fas fa-times"></i>
-        <i onclick="next_lightbox()" class="fas fa-angle-right"></i>
+        <strong onclick="close_lightbox_modal()" class="close fas fa-times"></strong>
+        <strong onclick="next_lightbox()" class="fas fa-angle-right"></strong>
       </div>
         
     </div>
@@ -39,7 +39,7 @@
 			<div class="modal">
 				<header>
           <h2>Contactez-moi</h2>
-          <img src="assets/icons/close.svg" onclick="closeModal()" />
+          <img src="assets/icons/close.svg" onclick="closeModal()" all="icons close" />
         </header>
 				<form action="photographer.html"  method="get" onsubmit="return submitModal(event)">
 					<div class="formData">
@@ -51,7 +51,7 @@
 						<input class="inputModal" aria-required="true" id="last-name" type="text" name="last-name" aria-labelledby="last-name" />
 					</div>
 					<div class="formData">
-						<label for="mail">Email</label>
+						<label for="email">Email</label>
 						<input class="inputModal" aria-required="true" id="email" type="email" name="email" aria-labelledby="email"/>
 					</div>
 					<div class="formData">

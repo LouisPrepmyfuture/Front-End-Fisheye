@@ -3,7 +3,8 @@ function photographerFactory(data) {
 	const { name, portrait, country, city, tagline, price, id } = data
 	const picture = `assets/photographers/${portrait}`
 	const link = `photographer.html?id=${id}`
-	// Affiche les Medias dans des cards  
+
+	// Affiche les Medias dans des cards link
 	function getUserCardDOM() {
 		const article = document.createElement('article')
 		const a = document.createElement('a')
@@ -53,6 +54,7 @@ function photographerFactory(data) {
 		button.setAttribute('class', 'contact_button')
 		img.setAttribute('src', picture)
 		img.setAttribute('all', 'Photo de du photographe')
+		
 
 		content.appendChild(div)
 		div.appendChild(h1)

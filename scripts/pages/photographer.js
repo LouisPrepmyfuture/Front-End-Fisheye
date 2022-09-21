@@ -28,9 +28,8 @@ async function displayDataMedia(photographer, optionTri = 'date') {
 	pathImg = photographer.photographer.name.substring(0, photographer.photographer.name.indexOf(' '))
 	pathImg = pathImg.replace(/-/g, ' ')
 	pathImg =`assets/photographers/${pathImg}/`
-	// console.log(JSON.stringify(photographer.medias))
+	
 	photographer.medias = myFilter(photographer.medias, optionTri)
-	// console.log(JSON.stringify(photographer.medias))
 
 	photographer.medias.forEach((media) => {
 		const photographerModel = mediaFactory(media,pathImg)
@@ -69,12 +68,17 @@ async function showTotalLink(photographer){
 
 // return un select et écoute un change sur se meme select
 function showTrieMedia(photographer){
+	const labelSelect = document.createElement('label')
 	const selectList = document.createElement('select')
-	const tri = document.querySelector('#tri')
+	const trie = document.querySelector('#trie')
 	const options =['date','popularite','title']
+	labelSelect.textContent += labelSelect.textContent+'Trier par'
 
-	selectList.id = 'selectTri'
-	tri.appendChild(selectList)
+	selectList.id = 'selecttrie'
+	trie.appendChild(labelSelect)
+	trie.appendChild(selectList)
+	selectList.setAttribute('role', 'listBox')
+	selectList.setAttribute('ariaActivedescendant', 'IDREF')
 
 	for (let i = 0 ;i < options.length ;i++) {
 		const option = document.createElement('option')
@@ -84,7 +88,6 @@ function showTrieMedia(photographer){
 	}
 
 	selectList.addEventListener('change', () => {
-		console.log(selectList.value)
 		deleteChild('.media_section')
 		displayDataMedia(photographer, selectList.value)
 	})
@@ -100,7 +103,7 @@ function deleteChild(parent) {
 	}
 }
 
-// tri selon array par sa date ou popularité ou titre
+// trie selon array par sa date ou popularité ou titre
 function myFilter(varArray, trie){
 	if(trie == 'date'){
 		varArray.sort(function (a, b) {
