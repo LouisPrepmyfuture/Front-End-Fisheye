@@ -1,11 +1,11 @@
 
 function mediaFactory(data, pathImg) {
-	const { id, photographerId, title, image, date, price, video } = data
+	const { id, title, image, video } = data
 	let {likes} = data 
 	let media, mediaBlock
-	const link = `photographer.html?id=${id}`
 
-  //crée une carde
+
+	//crée une carde
 	function getUserCardMediaDOM(){
 		const card = document.createElement( 'div' )
 		const body = document.createElement( 'div' )
@@ -57,7 +57,7 @@ function mediaFactory(data, pathImg) {
 	}
 
 	//adissionne tout les like  
-	function getSumLikes(i) {
+	function getSumLikes() {
 		const likesDomList = document.querySelectorAll('.btn-like')
 		let sum = 0
 
