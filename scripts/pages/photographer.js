@@ -38,6 +38,7 @@ async function displayDataMedia(photographer, optionTri = 'date') {
 	})
 
 }
+
 // affiche le total des like d'un photographe
 async function showTotalLink(photographer){
 	let likes = 0
@@ -78,7 +79,7 @@ function showTrieMedia(photographer){
 	trie.appendChild(labelSelect)
 	trie.appendChild(selectList)
 	selectList.setAttribute('role', 'listBox')
-	selectList.setAttribute('ariaActivedescendant', 'IDREF')
+	selectList.setAttribute('aria-activedescendant', 'IDREF')
 
 	for (let i = 0 ;i < options.length ;i++) {
 		const option = document.createElement('option')

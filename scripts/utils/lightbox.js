@@ -33,14 +33,6 @@ document.addEventListener('keyup', (event) => {
 }, false)
 
 
-// $(document).on('keydown', e => {
-// 	const keyCode = e.keyCode ? e.keyCode : e.which
-
-// 	if (document.getElementById('lightbox_modal').attr('aria-hidden') == 'false' && keyCode === 27) {
-// 		close_lightbox_modal()
-// 	}
-// })
-
 // media suivent 
 function next_lightbox() {
 	let total_media = document.querySelectorAll('.card').length - 1

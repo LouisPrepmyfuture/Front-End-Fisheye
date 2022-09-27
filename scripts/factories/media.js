@@ -1,13 +1,14 @@
 
 function mediaFactory(data, pathImg) {
-	const { id, title, image, video } = data
+
+	const { title, image, video } = data
 	let {likes} = data 
 	let media, mediaBlock
 
 
 	//crée une carde
 	function getUserCardMediaDOM(){
-		const card = document.createElement( 'div' )
+		const card = document.createElement( 'a' )
 		const body = document.createElement( 'div' )
 		const h2 = document.createElement( 'h2' )
 		const like = document.createElement( 'a' )
@@ -34,6 +35,7 @@ function mediaFactory(data, pathImg) {
 		i.setAttribute('class', 'like heart fas fa-heart')
 		h2.textContent = title
 		like.textContent = likes
+		like.setAttribute('aria-label','likes')
 		like.setAttribute('class', 'btn-like')
 
 		card.appendChild(mediaBlock)
