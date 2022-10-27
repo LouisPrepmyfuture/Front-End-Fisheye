@@ -1,6 +1,7 @@
 let modal = document.getElementById('lightbox_modal')
 // Open the Modal
 function open_lightbox_modal() {
+	
 	const main = document.getElementById('main')
 	const preview = document.getElementById('preview')
 	preview.focus()
@@ -14,6 +15,7 @@ function open_lightbox_modal() {
 function close_lightbox_modal() {
 	let content = document.getElementById('content')
 	content.removeChild(content.firstChild)
+	content.removeChild(content.lastChild)
 	document.getElementById('lightbox_modal').style.display = 'none'
 } 
 
@@ -62,15 +64,21 @@ function preview_lightbox() {
 }
 
 function showLightbox(n) {
+
 	let content = document.getElementById('content')
 	let htmlMedia = document.querySelector('#media-'+n)
+	let title = document.querySelector('#media-title-'+n)
 	if(content.firstChild){
 		content.removeChild(content.firstChild)
+		content.removeChild(content.lastChild)
 	}else{
 		open_lightbox_modal()
 	}
 	let cloneHtmlMedia = htmlMedia.cloneNode(false)
+	let newDomTitle = title.cloneNode(false)
+	newDomTitle.innerHTML = title.innerHTML
 
 	cloneHtmlMedia.setAttribute('class','media-lightbox')
 	content.appendChild(cloneHtmlMedia)
+	content.appendChild(newDomTitle)
 }

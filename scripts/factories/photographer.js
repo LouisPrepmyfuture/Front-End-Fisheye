@@ -53,7 +53,7 @@ function photographerFactory(data) {
 		content.setAttribute('class', 'content-photographer')
 		button.setAttribute('class', 'contact_button')
 		img.setAttribute('src', picture)
-		img.setAttribute('all', 'Photo de du photographe')
+		img.setAttribute('alt', 'Photo de du photographe')
 		
 
 		content.appendChild(div)

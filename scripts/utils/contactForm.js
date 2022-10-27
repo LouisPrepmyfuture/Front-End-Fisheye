@@ -7,7 +7,6 @@ function displayModal() {
 	main.setAttribute('aria-hidden', 'true')
 	main.classList.add('no-sroll')
 	modal.style.display = 'block'
-	
 }
 
 function closeModal() {
@@ -68,7 +67,7 @@ function ModalValidater(){
 	}
    
 	if(!email.value){
-		showErrorForm(email, 'Vous devez entrer votre date de naissance.')
+		showErrorForm(email, 'Vous devez entrer une adresse mail.')
 		nbError++
 	}else if(!reguliareEmail.test(email.value)){
 		showErrorForm(email, ' L\'adresse mail n\'est pas valide')

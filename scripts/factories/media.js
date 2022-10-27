@@ -8,8 +8,9 @@ function mediaFactory(data, pathImg) {
 
 	//crée une carde
 	function getUserCardMediaDOM(){
-		const card = document.createElement( 'a' )
+		const card = document.createElement( 'div' )
 		const body = document.createElement( 'div' )
+		const content_media = document.createElement( 'button' )
 		const h2 = document.createElement( 'h2' )
 		const like = document.createElement( 'a' )
 		const i = document.createElement( 'i' )
@@ -26,19 +27,25 @@ function mediaFactory(data, pathImg) {
 		}
 			
 		mediaBlock.setAttribute('src', media)
-		mediaBlock.setAttribute('id', 'media-'+card_id)
-		mediaBlock.setAttribute('id', 'media-'+card_id)
-		mediaBlock.setAttribute('onclick', 'showLightbox('+card_id+')')
 
+		mediaBlock.setAttribute('id', 'media-'+card_id)
+		h2.setAttribute('id', 'media-title-'+card_id)
+		content_media.setAttribute('onclick', 'showLightbox('+card_id+')')
+		
+		content_media.setAttribute('class', 'card-content')
 		card.setAttribute('class', 'card lightbox')
 		body.setAttribute('class', 'card-body')
 		i.setAttribute('class', 'like heart fas fa-heart')
+
 		h2.textContent = title
-		like.textContent = likes
+		like.textContent = likes			
 		like.setAttribute('aria-label','likes')
+		like.setAttribute('href',' ')
 		like.setAttribute('class', 'btn-like')
 
-		card.appendChild(mediaBlock)
+		card.appendChild(content_media)
+		content_media.appendChild(mediaBlock)
+
 		card.appendChild(body)
 		body.appendChild(h2)
 		body.appendChild(like)
@@ -47,6 +54,7 @@ function mediaFactory(data, pathImg) {
 			
 		// Ajoute un like 
 		like.addEventListener('click', function clickLike(e) {
+			e.preventDefault()
 			e.stopImmediatePropagation()
 			likes += 1
 			like.innerHTML = likes

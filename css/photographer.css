@@ -62,11 +62,16 @@ select {
     max-width: 1400px;
     margin: 50px auto;
 }
- .card{
-    width: 350px;
-    height: 351px;
-    margin: 0 25px 20px;
- }
+.card{
+   width: 350px;
+   height: 351px;
+   margin: 0 25px 20px;
+}
+.card-content{
+   width: 350px;
+   border: none;
+   background-color: transparent;
+}
 
  .card img , .card video{
      width: 100%;
@@ -178,6 +183,9 @@ select {
      bottom: 5%;
      position: fixed;
      justify-content: center;
+     background-color: white;
+    padding: 20px 20px 10px 20px;
+    border: 1px solid #901C1C;
  }
  #lightbox_modal .content_left,
  #lightbox_modal .content_right {
@@ -196,7 +204,7 @@ select {
     border: 2px solid #901C1C;
     width: 100%;
     object-fit: cover;
-    height: 100%;
+    height: 90%;
     object-position: center;
  }
 
@@ -215,6 +223,7 @@ select {
  }
 #lightbox_modal .content{
     width: 90%;
+     
 }
 .modal header img {
     cursor: pointer;
